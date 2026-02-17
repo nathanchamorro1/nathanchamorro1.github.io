@@ -1,0 +1,22 @@
+.content-wrapper {
+  max-width: 900px; 
+  margin: 100px auto; 
+  padding: 0 20px; 
+}
+
+body {
+  background-color: #1A2F48;
+  color: white;
+  font-family: "cofo-sans-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
+}
+
+h1 {
+    color:white
+    font-family: instrument-serif, sans-serif;
+}
+
+h2 {
+    color:white
+    font-family: instrument-serif, sans-serif;
+}

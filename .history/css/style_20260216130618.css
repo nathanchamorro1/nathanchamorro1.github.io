@@ -1,0 +1,31 @@
+body {
+  background-color: #1A2F48;
+  color: white;
+  margin: 0;
+  font-family: "cofo-sans-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
+  line-height: 1.6;
+}
+
+.content-wrapper {
+  max-width: 900px; 
+  margin: 100px auto; 
+  padding: 0 40px;
+}
+
+h1 {
+    color: white;
+    font-family: "instrument-serif", sans-serif;
+    font-variation-settings: "slnt" 0;
+    font-size: 14rem;
+    margin: 10px 0;
+    line-height: 1.6
+}
+
+h2 {
+    color: white;
+    font-family: "instrument-serif", sans-serif;
+    font-variation-settings: "slnt" 0;
+    font-size: 1.5rem;
+    opacity: 0.8;
+}

@@ -1,0 +1,58 @@
+body {
+  background-color: #1A2F48;
+  color: white;
+  margin: 0;
+  font-family: "cofo-sans-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+.content-wrapper {
+  max-width: 900px; 
+  margin: 100px auto; 
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+h1 {
+    color: white;
+    font-family: "instrument-serif", sans-serif;
+    font-size: 14rem;
+    font-weight: 400; 
+    font-variation-settings: "wght" 400; 
+    line-height: 0.8; 
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    color: white;
+    font-family: "instrument-serif", sans-serif;
+    font-weight: 400; 
+    font-variation-settings: "wght" 400;
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+h3 {
+    color: white;
+    font-family: "museo-sans", sans-serif;
+    font-weight: 400; 
+    font-variation-settings: "wght" 400;
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
