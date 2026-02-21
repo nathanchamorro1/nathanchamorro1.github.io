@@ -11,9 +11,8 @@ body {
 }
 
 .content-wrapper {
-  max-width: 800px; 
+  max-width: 850px; 
   margin: 0 auto; 
-  margin-top: 50px;
   padding: 0 40px;
   display: flex;
   flex-direction: column;
@@ -35,7 +34,7 @@ body {
 h1 {
     color: white;
     font-family: "instrument-serif", sans-serif;
-    font-size: clamp(4.5rem,6vw, 14rem);
+    font-size: clamp(4.5rem, 12vw, 14rem);
     font-weight: 400; 
     font-variation-settings: "wght" 400; 
     line-height: 0.8; 
@@ -45,13 +44,12 @@ h1 {
 
 h2 {
     color: white;
-    font-family: "museo-sans", sans-serif;
-    font-weight: 800; 
+    font-family: "instrument-serif", sans-serif;
+    font-weight: 400; 
     font-variation-settings: "wght" 400;
-    font-size: 1.5rem;
+    font-size: 3rem;
     opacity: 0.8;
     margin-bottom: 10px;
-    line-height: 3; 
 }
 
 h3 {
@@ -61,9 +59,6 @@ h3 {
     font-variation-settings: "wght" 400;
     font-size: 3rem;
     opacity: 0.8;
-    align-self: flex-start;
-    text-align: left;
-    width: 100%;
 }
 
 .reveal {
@@ -79,7 +74,7 @@ h3 {
 
 .navbar {
     position: fixed;
-    top: 0;
+    top: 300;
     width: 100%;
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -91,7 +86,7 @@ h3 {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 15px 20px;
     position: fixed;
 }
@@ -103,78 +98,16 @@ h3 {
     margin: 0;
     padding: 0;
     position: fixed;
-    align-items: center;
 }
 
 .nav-link {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 14px;
+    position: relative;
     position: fixed;
 }
 
 .nav-link:hover {
     opacity: 0.6;
-}
-
-/* --- Nav grid centering for .sidebar --- */
-/* --- Two-column layout: left sidebar, right content --- */
-.layout {
-    display: grid;
-    grid-template-columns: 220px 1fr; /* left column width, then content */
-    min-height: 100vh;
-}
-
-/* Sidebar occupies the full viewport height and vertically centers the menu */
-.sidebar {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 24px 20px;
-}
-
-.sidebar .nav-logo {
-    align-self: flex-start;
-    text-decoration: none;
-    color: white;
-}
-
-.sidebar ul {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    list-style: none;
-    margin: auto 0; /* centers the list vertically within sidebar */
-    padding: 0;
-}
-
-.sidebar .nav-link {
-    position: static; /* override earlier fixed positioning */
-    text-decoration: none;
-    color: white;
-    opacity: 0.8;
-}
-
-.sidebar .nav-link:hover {
-    opacity: 1;
-}
-
-.content { min-width: 0; }
-
-/* Optional: collapse to single column on small screens */
-@media (max-width: 768px) {
-  .layout { grid-template-columns: 1fr; }
-  .sidebar {
-    position: static;
-    height: auto;
-    padding: 16px;
-  }
-  .sidebar ul {
-    flex-direction: row;
-    gap: 16px;
-    margin: 8px 0 0 0;
-    justify-content: center;
-  }
 }
