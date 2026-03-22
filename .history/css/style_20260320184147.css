@@ -1,37 +1,6 @@
-/* ── Theme variables ── */
-:root {
-  --bg:               #0a0c18;
-  --text:             #ffffff;
-  --text-muted:       rgba(255,255,255,0.6);
-  --text-faint:       rgba(255,255,255,0.4);
-  --text-dim:         rgba(255,255,255,0.55);
-  --dot-bg:           #0a0c18;
-  --card-bg:          rgba(255,255,255,0.06);
-  --card-border:      rgba(255,255,255,0.12);
-  --card-bg-hover:    rgba(255,255,255,0.1);
-  --card-border-hover:rgba(255,255,255,0.3);
-  --timeline-line:    rgba(255,255,255,0.15);
-  --dot-border:       rgba(255,255,255,0.5);
-}
-
-body.light {
-  --bg:               #3f00ff;
-  --text:             #ffffff;
-  --text-muted:       rgba(255,255,255,0.75);
-  --text-faint:       rgba(255,255,255,0.55);
-  --text-dim:         rgba(255,255,255,0.7);
-  --dot-bg:           #3f00ff;
-  --card-bg:          rgba(255,255,255,0.12);
-  --card-border:      rgba(255,255,255,0.2);
-  --card-bg-hover:    rgba(255,255,255,0.2);
-  --card-border-hover:rgba(255,255,255,0.45);
-  --timeline-line:    rgba(255,255,255,0.25);
-  --dot-border:       rgba(255,255,255,0.7);
-}
-
 body {
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: #44444E;
+  color: white;
   margin: 0;
   font-family: museo-sans, sans-serif;
   font-weight: 300;
@@ -39,12 +8,11 @@ body {
   font-variation-settings: "slnt" 0, "wght" 400;
   line-height: 1.6;
   font-size: 1.5rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .content-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 800px; 
+  margin: 0 auto; 
   margin-top: 50px;
   padding: 0 40px;
   display: flex;
@@ -65,51 +33,31 @@ body {
 }
 
 h1 {
-    color: var(--text);
+    color: white;
     font-family: "instrument-serif", sans-serif;
     font-size: clamp(4.5rem,6vw, 14rem);
-    font-weight: 400;
-    font-variation-settings: "wght" 400;
-    line-height: 0.8;
+    font-weight: 400; 
+    font-variation-settings: "wght" 400; 
+    line-height: 0.8; 
     margin: 0;
     letter-spacing: -0.02em;
 }
 
 h2 {
-    color: var(--text);
+    color: white;
     font-family: "museo-sans", sans-serif;
-    font-weight: 800;
+    font-weight: 800; 
     font-variation-settings: "wght" 400;
     font-size: 1.5rem;
     opacity: 0.8;
     margin-bottom: 10px;
-    line-height: 3;
-}
-
-.terminal-prompt {
-    font-family: monospace;
-    font-weight: 400;
-}
-
-@keyframes blink {
-    0%, 49% { opacity: 1; }
-    50%, 100% { opacity: 0; }
-}
-
-.cursor {
-    display: inline-block;
-    width: 0.6ch;
-    height: 1em;
-    background: var(--text);
-    vertical-align: text-bottom;
-    margin-left: 2px;
-    animation: blink 1s step-end infinite;
+    line-height: 3; 
 }
 
 h3 {
-    color: var(--text);
+    color: white;
     font-family: "instrument-serif", sans-serif;
-    font-weight: 400;
+    font-weight: 400; 
     font-variation-settings: "wght" 400;
     font-size: 3rem;
     opacity: 0.8;
@@ -133,7 +81,7 @@ h3 {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--bg);
+    background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     z-index: 1000;
 }
@@ -160,7 +108,7 @@ h3 {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text);
+    color: white;
     font-size: 14px;
     position: fixed;
 }
@@ -169,14 +117,15 @@ h3 {
     opacity: 0.6;
 }
 
+/* --- Nav grid centering for .sidebar --- */
 /* --- Two-column layout: left sidebar, right content --- */
 .layout {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 220px 1fr; /* left column width, then content */
     min-height: 100vh;
 }
 
-/* Sidebar */
+/* Sidebar occupies the full viewport height and vertically centers the menu */
 .sidebar {
     position: sticky;
     top: 0;
@@ -189,15 +138,7 @@ h3 {
 .sidebar .nav-logo {
     align-self: flex-start;
     text-decoration: none;
-    color: var(--text);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-
-.sidebar .nav-logo.visible {
-    opacity: 1;
-    pointer-events: auto;
+    color: white;
 }
 
 .sidebar ul {
@@ -205,16 +146,14 @@ h3 {
     flex-direction: column;
     gap: 14px;
     list-style: none;
-    flex: 1;
-    justify-content: center;
+    margin: auto 0; /* centers the list vertically within sidebar */
     padding: 0;
-    margin: 0;
 }
 
 .sidebar .nav-link {
-    position: static;
+    position: static; /* override earlier fixed positioning */
     text-decoration: none;
-    color: var(--text);
+    color: white;
     opacity: 0.8;
 }
 
@@ -222,31 +161,10 @@ h3 {
     opacity: 1;
 }
 
-/* ── Theme toggle ── */
-.theme-toggle {
-    background: none;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: var(--text);
-    font-family: museo-sans, sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.15s, border-color 0.15s;
-    align-self: flex-start;
-}
-
-.theme-toggle:hover {
-    opacity: 1;
-    border-color: rgba(255,255,255,0.7);
-}
-
 .content { min-width: 0; }
 
 h4 {
-    color: var(--text);
+    color: white;
     font-family: museo-sans, sans-serif;
     font-weight: 700;
     font-size: 1rem;
@@ -261,8 +179,8 @@ h4 {
 }
 
 .project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 10px;
     padding: 1.25rem 1.35rem;
     display: flex;
@@ -272,8 +190,8 @@ h4 {
 }
 
 .project-card:hover {
-    background: var(--card-bg-hover);
-    border-color: var(--card-border-hover);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .project-card p {
@@ -294,8 +212,8 @@ h4 {
     font-size: 0.72rem;
     padding: 0.2rem 0.55rem;
     border-radius: 4px;
-    background: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
     font-family: museo-sans, sans-serif;
     font-weight: 500;
 }
@@ -304,7 +222,7 @@ h4 {
     display: inline-flex;
     align-items: center;
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
     margin-top: 0.25rem;
     width: fit-content;
@@ -312,7 +230,7 @@ h4 {
 }
 
 .project-link:hover {
-    color: var(--text);
+    color: white;
 }
 
 /* ── Timeline ── */
@@ -328,7 +246,7 @@ h4 {
     top: 6px;
     bottom: 0;
     width: 2px;
-    background: var(--timeline-line);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 2px;
 }
 
@@ -348,10 +266,9 @@ h4 {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: var(--dot-bg);
-    border: 2px solid var(--dot-border);
+    background: #44444E;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     margin-left: 1px;
-    transition: background-color 0.3s ease;
 }
 
 .timeline-header {
@@ -364,19 +281,19 @@ h4 {
     font-family: museo-sans, sans-serif;
     font-weight: 700;
     font-size: 1rem;
-    color: var(--text);
+    color: white;
 }
 
 .timeline-company {
     font-family: museo-sans, sans-serif;
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .timeline-meta {
     font-family: museo-sans, sans-serif;
     font-size: 0.8rem;
-    color: var(--text-faint);
+    color: rgba(255, 255, 255, 0.4);
     margin-top: 0.1rem;
     display: flex;
     gap: 1rem;
@@ -386,7 +303,7 @@ h4 {
 .timeline-desc {
     margin-top: 0.65rem;
     font-size: 0.875rem;
-    color: var(--text-dim);
+    color: rgba(255, 255, 255, 0.55);
     line-height: 1.7;
 }
 
@@ -400,8 +317,7 @@ h4 {
 
 .timeline-logo {
     display: block;
-    max-height: 400px;
-    max-width: 350px;
+    max-height: 32px;
     width: auto;
     opacity: 0.7;
     margin-bottom: 0.5rem;
@@ -417,17 +333,17 @@ h4 {
 
 .contact-link {
     text-decoration: none;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.6);
     font-family: museo-sans, sans-serif;
     font-size: 0.9rem;
     transition: color 0.15s;
 }
 
 .contact-link:hover {
-    color: var(--text);
+    color: white;
 }
 
-/* Collapse to single column on small screens */
+/* Optional: collapse to single column on small screens */
 @media (max-width: 768px) {
   .layout { grid-template-columns: 1fr; }
   .sidebar {
@@ -440,10 +356,6 @@ h4 {
     gap: 16px;
     margin: 8px 0 0 0;
     justify-content: center;
-  }
-  .theme-toggle {
-    margin-top: 12px;
-    align-self: center;
   }
   .projects-grid {
     grid-template-columns: 1fr;
