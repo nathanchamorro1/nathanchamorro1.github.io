@@ -954,12 +954,13 @@ body.light .footer-email {
 }
 
 .mobile-menu-dot {
-    width: 8px;
-    height: 8px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: var(--text);
     display: block;
-    opacity: 0.7;
+    opacity: 1;
+    box-shadow: 0 -7px 0 var(--text), 0 7px 0 var(--text);
     transition: opacity 0.15s;
 }
 
@@ -1049,7 +1050,7 @@ body.light .footer-email {
     height: 26px;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 0.78rem;
     line-height: 1.8;
   }
   .content-wrapper {
