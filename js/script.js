@@ -1,18 +1,35 @@
-// ── Theme toggle ──
+// creates icons on load
+lucide.createIcons();
+
+// theme toggle
 const toggle = document.getElementById("themeToggle");
 
+// respect whatever the user picked last time
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light");
-  toggle.textContent = "DARK MODE";
 }
 
 toggle.addEventListener("click", () => {
   const isLight = document.body.classList.toggle("light");
-  toggle.textContent = isLight ? "DARK MODE" : "LIGHT MODE";
   localStorage.setItem("theme", isLight ? "light" : "dark");
 });
 
-// ── Scroll reveal ──
+// mobile menu
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+mobileMenuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+
+// close the dropdown when a nav link is tapped
+mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// scroll reveal: anything with class "reveal" fades up when it enters the viewport
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
@@ -21,6 +38,7 @@ function revealOnScroll() {
   reveals.forEach(el => {
     const elementTop = el.getBoundingClientRect().top;
 
+    // 200px buffer so the animation fires a little before the element hits the bottom edge
     if (elementTop < windowHeight - 200) {
       el.classList.add("reveal-visible");
     }
@@ -28,18 +46,6 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
+
 revealOnScroll();
 
-// ── Show sidebar name only after scrolling past the hero h1 ──
-const heroName = document.querySelector("#home h1");
-const navLogo = document.querySelector(".nav-logo");
-
-const nameObserver = new IntersectionObserver(([entry]) => {
-  if (entry.isIntersecting) {
-    navLogo.classList.remove("visible");
-  } else {
-    navLogo.classList.add("visible");
-  }
-}, { threshold: 0 });
-
-nameObserver.observe(heroName);

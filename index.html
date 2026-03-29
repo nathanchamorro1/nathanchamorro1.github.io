@@ -7,183 +7,440 @@
 <title>Nathan Chamorro's Portfolio</title>
 <link rel="icon" type="image/x-icon" href = "/assets/snoopy-favicon.ico">
 <link rel="stylesheet" href="https://use.typekit.net/lhh1weh.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-<div class="layout">
-  <nav class="sidebar">
-    <a href="#home" class="nav-logo">Nathan Chamorro</a>
-    <ul>
+<!-- fixed top navbar with dark/light toggle and mobile hamburger -->
+<nav class="topnav">
+  <div class="topnav-inner">
+  <a href="#home" class="topnav-brand">NATHAN CHAMORRO</a>
+  <div class="topnav-right">
+    <ul class="topnav-links">
       <li><a href="#home" class="nav-link">HOME</a></li>
-      <li><a href="#about" class="nav-link">ABOUT</a></li>
+      <li><a href="#skills" class="nav-link">SKILLS</a></li>
       <li><a href="#projects" class="nav-link">PROJECTS</a></li>
       <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
       <li><a href="#contact" class="nav-link">CONTACT</a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle">LIGHT MODE</button>
-  </nav>
+    <a href="resume.pdf" class="nav-link nav-link--resume">RESUME</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i data-lucide="sun" class="icon-sun" width="16" height="16"></i>
+      <i data-lucide="moon" class="icon-moon" width="16" height="16"></i>
+    </button>
+  </div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+    <span class="mobile-menu-dot"></span>
+  </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu-links">
+      <li><a href="#home" class="mobile-nav-link">HOME</a></li>
+      <li><a href="#skills" class="mobile-nav-link">SKILLS</a></li>
+      <li><a href="#projects" class="mobile-nav-link">PROJECTS</a></li>
+      <li><a href="#experience" class="mobile-nav-link">EXPERIENCE</a></li>
+      <li><a href="#contact" class="mobile-nav-link">CONTACT</a></li>
+      <li><a href="resume.pdf" class="mobile-nav-link">RESUME</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <main class="content">
+<main class="content">
+    <!-- hero: photo on the right, name + links on the left -->
     <div class="content-wrapper" id="home">
-      <section class="hero">
-        <h2 class="reveal terminal-prompt">nathanchamorro@portfolio:~$ whoami <span class="cursor"></span></h2>
-        <h1 class="reveal">Nathan Chamorro</h1>
-      </section>
-      <p class="reveal">
-        <br>I'm a computer science student at Cal State Fullerton graduating this May, focused on software development, cybersecurity, and design. <br>
-        <br>This site showcases my projects, experience, and more about me as a student.<br>
-        <br>Designed in Figma, built from scratch in Visual Studio Code, and deployed via GitHub Pages using HTML, CSS, and JavaScript (in case you were wondering!). <br>
-      </p>
+      <div class="hero-split">
+        <div class="hero-left">
+          <section class="hero">
+            <h2 class="reveal terminal-prompt">nathanchamorro@portfolio:~$ whoami <span class="cursor"></span></h2>
+            <h1 class="reveal">Nathan Chamorro</h1>
+            <div class="hero-buttons reveal">
+              <a href="resume.pdf" target="_blank" class="hero-btn">
+                <i data-lucide="file-user" width="16" height="16"></i>
+                Resume
+              </a>
+              <a href="https://github.com/nathanchamorro1" target="_blank" class="hero-btn hero-btn--outline">
+                <img src="assets/github.svg" width="16" height="16" alt="GitHub">
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/nathanchamorro" target="_blank" class="hero-btn hero-btn--outline">
+                <img src="assets/linkedin.svg" width="16" height="16" alt="LinkedIn">
+                LinkedIn
+              </a>
+              <a href="mailto:nathanchamorro05@gmail.com?subject=Hey,%20Nathan!"" class="hero-btn hero-btn--outline">
+                <i data-lucide="mail" width="16" height="16"></i>
+                Email
+              </a>
+            </div>
+          </section>
+          <br>
+          <p class="reveal">I'm a CS student at Cal State Fullerton graduating May 2026 focused on building software that's as thoughtful in design as it is in function.<br><br>I am open to new opportunities in software, IT, cybersecurity, or anywhere in technology. I'm also happy to setup a coffee chat.
+            <p class="credit-hero">
+              <i data-lucide="lightbulb" class="credit-hero-icon" width="17" height="17"></i>
+              <span>Designed in Figma, built with HTML, CSS, and JavaScript, and deployed via GitHub Pages. Icons from <a href="https://lucide.dev/icons/" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">Lucide<i data-lucide="arrow-up-right" width="12" height="12"></i></a>. Header type is set in Instrument Sans, body in Museo Sans.</span>
+            </p>
+        </div>
+        <div class="hero-right reveal">
+          <img src="assets/me.jpeg" alt="Nathan Chamorro" class="hero-photo">
+        </div>
+      </div>
     </div>
 
-    <div class="content-wrapper" id="about">
-      <h3 class="reveal">About</h3>
-      <p class="reveal">
-        I'm so tiredddd
-      </p>
+    <!-- skills section: split into tech stack and relevant coursework -->
+    <div class="content-wrapper" id="skills">
+      <h3 class="reveal">Skills</h3>
+
+      <div class="skills-subsection reveal">
+        <span class="skills-subsection-label">Technologies</span>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/python/1a1a2e" alt="Python" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/python/e8e8f0" alt="Python" class="skill-icon logo-dark"></div>
+            <span class="skill-label">Python</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/cplusplus/1a1a2e" alt="C++" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/cplusplus/e8e8f0" alt="C++" class="skill-icon logo-dark"></div>
+            <span class="skill-label">C++</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/flutter/1a1a2e" alt="Flutter" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/flutter/e8e8f0" alt="Flutter" class="skill-icon logo-dark"></div>
+            <span class="skill-label">Flutter</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/html5/1a1a2e" alt="HTML5" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/html5/e8e8f0" alt="HTML5" class="skill-icon logo-dark"></div>
+            <span class="skill-label">HTML5</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/mysql/1a1a2e" alt="SQL" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/mysql/e8e8f0" alt="SQL" class="skill-icon logo-dark"></div>
+            <span class="skill-label">SQL</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/git/1a1a2e" alt="Git" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/git/e8e8f0" alt="Git" class="skill-icon logo-dark"></div>
+            <span class="skill-label">Git</span>
+          </div>
+          <div class="skill-item">
+          <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cloud" width="22" height="22"></i></div>
+            <span class="skill-label">AWS</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/firebase/1a1a2e" alt="Firebase" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/firebase/e8e8f0" alt="Firebase" class="skill-icon logo-dark"></div>
+            <span class="skill-label">Firebase</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/docker/1a1a2e" alt="Docker" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/docker/e8e8f0" alt="Docker" class="skill-icon logo-dark"></div>
+            <span class="skill-label">Docker</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/javascript/1a1a2e" alt="JavaScript" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/javascript/e8e8f0" alt="JavaScript" class="skill-icon logo-dark"></div>
+            <span class="skill-label">JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/css/1a1a2e" alt="CSS" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/css/e8e8f0" alt="CSS" class="skill-icon logo-dark"></div>
+            <span class="skill-label">CSS</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/react/1a1a2e" alt="React" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/react/e8e8f0" alt="React" class="skill-icon logo-dark"></div>
+            <span class="skill-label">React</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/fastapi/1a1a2e" alt="FastAPI" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/fastapi/e8e8f0" alt="FastAPI" class="skill-icon logo-dark"></div>
+            <span class="skill-label">FastAPI</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/postgresql/1a1a2e" alt="PostgreSQL" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/postgresql/e8e8f0" alt="PostgreSQL" class="skill-icon logo-dark"></div>
+            <span class="skill-label">PostgreSQL</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/terraform/1a1a2e" alt="Terraform" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/terraform/e8e8f0" alt="Terraform" class="skill-icon logo-dark"></div>
+            <span class="skill-label">Terraform</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/githubactions/1a1a2e" alt="GitHub Actions" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/githubactions/e8e8f0" alt="GitHub Actions" class="skill-icon logo-dark"></div>
+            <span class="skill-label">GitHub Actions</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/linux/1a1a2e" alt="Linux" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/linux/e8e8f0" alt="Linux" class="skill-icon logo-dark"></div>
+            <span class="skill-label">Linux</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="plug" width="22" height="22"></i></div>
+            <span class="skill-label">StarRez API</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/dart/1a1a2e" alt="Dart" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/dart/e8e8f0" alt="Dart" class="skill-icon logo-dark"></div>
+            <span class="skill-label">Dart</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-subsection reveal">
+        <span class="skills-subsection-label">Relevant Coursework at CSUF</span>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="layers" width="28" height="28"></i></div>
+            <span class="skill-label">Data Structures</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cpu" width="28" height="28"></i></div>
+            <span class="skill-label">Algorithm Engineering</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cloud" width="28" height="28"></i></div>
+            <span class="skill-label">Cloud Computing & Security</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="sparkles" width="28" height="28"></i></div>
+            <span class="skill-label">Artificial Intelligence</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="database" width="28" height="28"></i></div>
+            <span class="skill-label">Database Systems</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="award" width="28" height="28"></i></div>
+            <span class="skill-label">Capstone</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="monitor" width="28" height="28"></i></div>
+            <span class="skill-label">Web Front-End Development</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="server" width="28" height="28"></i></div>
+            <span class="skill-label">Web Back-End Development</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="wifi" width="28" height="28"></i></div>
+            <span class="skill-label">Computer Communications</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="link" width="28" height="28"></i></div>
+            <span class="skill-label">Blockchain Technologies</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="infinity" width="28" height="28"></i></div>
+            <span class="skill-label">DevOps</span>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- projects section: 2-column card grid -->
     <div class="content-wrapper" id="projects">
       <h3 class="reveal">My Projects</h3>
       <div class="projects-grid reveal">
 
         <div class="project-card">
-          <h4>TitanPark</h4>
-          <p>Description that I'll write later</p>
-          <div class="project-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Firebase</span>
-            <span class="tag">Docker</span>
+          <div class="project-img-wrap" style="background: #0f2a4a;"><img src="assets/titanpark_card.png" alt="TitanPark"></div>
+          <div class="project-info">
+            <span class="project-category">MOBILE APPLICATION</span>
+            <h4 class="project-title">TitanPark</h4>
+            <p class="project-desc">A campus parking app for CSUF students built with Flutter, featuring real-time lot availability and permit management</p>
+            <div class="project-tags">
+              <span class="project-tag">Flutter</span>
+              <span class="project-tag">Dart</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">Docker</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">FastAPI</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/nathanchamorro1/titanpark" target="_blank" class="project-link">
+                GitHub <i data-lucide="arrow-up-right" width="13" height="13"></i>
+              </a>
+            </div>
           </div>
-          <a class="project-link" href="https://github.com/nathanchamorro1/titanpark" target="_blank">View on GitHub →</a>
         </div>
 
         <div class="project-card">
-          <h4>Lockout Workflow Automation</h4>
-          <p>Designed and built automated workflows that replaced manual lockout and billing processes across housing teams. By integrating Microsoft Forms, Power Automate, and the StarRez API, I streamlined how lockout records and billing entries were generated, making the whole process more accurate and consistent. I also wrote SQL queries to validate resident data and catch duplicates before they turned into billing errors, which cut down on manual review time significantly.</p>
-          <div class="project-tags">
-            <span class="tag">SQL</span>
-            <span class="tag">JSON</span>
-            <span class="tag">StarRez REST API</span>
-            <span class="tag">Power Automate</span>
+          <div class="project-img-wrap" style="background: #1a2e1a;"><img src="assets/housing_automation_card.png" alt="Lockout Workflow"></div>
+          <div class="project-info">
+            <span class="project-category">WORKFLOW AUTOMATION</span>
+            <h4 class="project-title">Lockout Workflow</h4>
+            <p class="project-desc">Automated lockout and billing processes for 2,200+ residents by integrating Microsoft Forms, Power Automate, and the StarRez API</p>
+            <div class="project-tags">
+              <span class="project-tag">Power Automate</span>
+              <span class="project-tag">Microsoft Forms</span>
+              <span class="project-tag">StarRez API</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">
+                GitHub <i data-lucide="arrow-up-right" width="13" height="13"></i>
+              </a>
+              <a href="https://drive.google.com/file/d/1WpiVGs7HrFMfDocmjuY2gUrkn6I_YrWz/view?usp=sharing" target="_blank" class="project-link">
+                Documentation <i data-lucide="arrow-up-right" width="13" height="13"></i>
+              </a>
+            </div>
           </div>
-          <a class="project-link" href="https://docs.google.com/document/d/1M6-ygjXf-dhSdfaMYvvv2SeAt0b2Ff4bwpDKSklaPlQ/edit?usp=sharing" target="_blank">View Documentation →</a>
         </div>
 
         <div class="project-card">
-          <h4>another project</h4>
-          <p>idk something</p>
-          <div class="project-tags">
-            <span class="tag">TypeScript</span>
-            <span class="tag">AWS</span>
+          <div class="project-img-wrap" style="background: #2a1a2e;"><img src="assets/slayce_card.png" alt="SLAYCE"></div>
+          <div class="project-info">
+            <span class="project-category">ARTIFICIAL INTELLIGENCE</span>
+            <h4 class="project-title">SLAYCE AI Posture Corrector Application</h4>
+            <p class="project-desc">SLAYCE is an AI-powered posture correction tool built in 24 hours at FullyHacks, CSUF's annual hackathon. It runs passively in the background, using your webcam to detect poor posture in real time and delivering actionable feedback powered by Cerebras AI. Our team won 1st place for Best Use of Cerebras out of all competing teams.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Cerebras AI</span>
+              <span class="project-tag">OpenCV</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/msavoiu/fullyhacks-2025" target="_blank" class="project-link">
+                GitHub <i data-lucide="arrow-up-right" width="13" height="13"></i>
+              </a>
+              <a href="https://youtu.be/CfpUIvzETOM" target="_blank" class="project-link">
+                Live Demo <i data-lucide="arrow-up-right" width="13" height="13"></i>
+              </a>
+              <a href="https://devpost.com/software/slayce-posture-corrector?_gl=1*5osqy8*_gcl_au*MTI4MzM5NjM5NS4xNzYzNDk1NTI2*_ga*MTk0NzczNzQyNC4xNzYzNDk1NTI2*_ga_0YHJK3Y10M*czE3NjM0OTU1MjYkbzEkZzEkdDE3NjM0OTU1MzYkajUwJGwwJGgw" target="_blank" class="project-link">
+                DevPost <i data-lucide="arrow-up-right" width="13" height="13"></i>
+              </a>
+            </div>
           </div>
-          <a class="project-link" href="#" target="_blank">View →</a>
         </div>
 
         <div class="project-card">
-          <h4>another project</h4>
-          <p>i hope im not unemployed</p>
-          <div class="project-tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">Tailwind</span>
+          <div class="project-img-wrap" style="background: #2e1a1a;"><img src="assets/habitflow_card.png" alt="HabitFlow"></div>
+          <div class="project-info">
+            <span class="project-category">PYTHON PROGRAM</span>
+            <h4 class="project-title">HabitFlow</h4>
+            <p class="project-desc">HabitFlow is a full-stack habit tracking web app built with Flask and SQLAlchemy. Users can create an account, add habits with custom schedules, and track their progress with a completion counter. The app features a background scheduler that sends email reminders at user-defined times, supporting alerts up to a day in advance. Users can also manage their profile and account settings directly from the dashboard.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Flask</span>
+              <span class="project-tag">SQLAlchemy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/nathanchamorro1/habitflow" target="_blank" class="project-link">
+                GitHub <i data-lucide="arrow-up-right" width="13" height="13"></i>
+              </a>
+            </div>
           </div>
-          <a class="project-link" href="#" target="_blank">View →</a>
         </div>
 
       </div>
+      <div class="projects-footer-links reveal">
+        <a href="https://github.com/nathanchamorro1/nathanchamorro1.github.io" target="_blank" class="projects-footer-link">
+          View this Portfolio's Source Code
+          <i data-lucide="arrow-up-right" width="14" height="14"></i>
+        </a>
+        <a href="https://github.com/nathanchamorro1" target="_blank" class="projects-footer-link">
+          View My GitHub
+          <i data-lucide="arrow-up-right" width="14" height="14"></i>
+        </a>
+      </div>
     </div>
 
+    <!-- experience section: vertical timeline with logo, role, and bullet points -->
     <div class="content-wrapper" id="experience">
       <h3 class="reveal">Experience</h3>
       <div class="timeline reveal">
 
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <img src="assets/HOUSING-white (1).png" alt="Housing and Residential Engagement logo" class="timeline-logo">
-            <span class="timeline-role">Residential Technology Student</span>
-            <span class="timeline-company">Housing and Residential Engagement</span>
-            <div class="timeline-meta">
-              <span>October 2024 - Present</span>
-              <span>Fullerton, CA · Part-time</span>
-            </div>
+          <div class="timeline-logo-wrap">
+            <img src="assets/csuf-monogram-blue.png" alt="Cal State Fullerton (CSUF) logo" class="timeline-logo logo-light">
+            <img src="assets/csuf-monogram-white.png" alt="Cal State Fullerton (CSUF) logo" class="timeline-logo logo-dark">
           </div>
-          <div class="timeline-desc">
-            <ul>
-              <li>Provide technical support for network and device issues across a 2,000+ resident housing community</li>
-              <li>Manage StarRez system SQL data queries and access permissions, ensuring safe handling of sensitive student data</li>
-              <li>Co-managed the end-to-end housing application system, including complex workflow logic, documentation, and user-facing processes, processing ~3,700 applications annually and supporting room selection and resident entry processes</li>
-              <li>Maintain and review device access and permissions to meet campus security standards and minimize unauthorized system usage</li>
-            </ul>
+          <div class="timeline-body">
+            <span class="timeline-role">Residential Technology Assistant</span>
+            <span class="timeline-company"><a href="https://www.fullerton.edu/housing" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">CSUF Housing and Residential Engagement<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
+            <div class="timeline-meta">October 2024 – Present · Fullerton, CA · Part-time</div>
+            <div class="timeline-desc">
+              <ul>
+                <li>Provide technical support for network and device issues across a 2,000+ resident housing community</li>
+                <li>Manage StarRez system SQL data queries and access permissions, ensuring safe handling of sensitive student data</li>
+                <li>Co-managed the end-to-end housing application system, including complex workflow logic, documentation, and user-facing processes, processing ~3,700 applications annually and supporting room selection and resident entry processes</li>
+                <li>Maintain and review device access and permissions to meet campus security standards and minimize unauthorized system usage</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <span class="timeline-role">Block Clerk</span>
-            <span class="timeline-company">ADESA Los Angeles</span>
-            <div class="timeline-meta">
-              <span>Nov 2023 – Present</span>
-              <span>Mira Loma, CA · Part-Time</span>
-            </div>
+          <div class="timeline-logo-wrap">
+            <img src="assets/cybersecurity-logo-stack.png" alt="CSUF Center for Cybersecurity logo" class="timeline-logo logo-light">
+            <img src="assets/cybersecurity-logo-stack-white.png" alt="CSUF Center for Cybersecurity logo" class="timeline-logo logo-dark">
           </div>
-          <div class="timeline-desc">
-            <ul>
-              <li>Describe a key responsibility or accomplishment here.</li>
-              <li>Quantify impact where possible.</li>
-            </ul>
+          <div class="timeline-body">
+            <span class="timeline-role">Offensive Security Analyst, Red Team</span>
+            <span class="timeline-company"><a href="https://www.fullerton.edu/cybersecurity/" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">CSUF Center for Cybersecurity<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
+            <div class="timeline-meta">October 2024 – Present · Fullerton, CA · Academic Program</div>
+            <div class="timeline-desc">
+              <ul>
+                <li>Selected for offensive security training under Dr. Mikhail Gofman, Director of the Center for Cybersecurity, focusing on advanced adversary emulation, techniques, tooling, and attack methodologies</li>
+                <li>Competed in collegiate cybersecurity competitions involving network exploitation, web application attacks, and system compromise</li>
+              </ul>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <div class="content-wrapper" id="relevant-experience">
-      <h3 class="reveal">Relevant Experience</h3>
-      <div class="timeline reveal">
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <img src="assets/CENTER-CYBERSECURITY-reversed.png" alt="CSUF Center for Cybersecurity logo" class="timeline-logo">
-            <span class="timeline-role">Residential Technology Student</span>
-            <span class="timeline-company">Housing and Residential Engagement</span>
-            <div class="timeline-meta">
-              <span>October 2024 - Present</span>
-              <span>Fullerton, CA · Part-time</span>
-            </div>
-          </div>
-          <div class="timeline-desc">
-            <ul>
-              <li>Provide technical support for network and device issues across a 2,000+ resident housing community</li>
-              <li>Manage StarRez system SQL data queries and access permissions, ensuring safe handling of sensitive student data</li>
-              <li>Co-managed the end-to-end housing application system, including complex workflow logic, documentation, and user-facing processes, processing ~3,700 applications annually and supporting room selection and resident entry processes</li>
-              <li>Maintain and review device access and permissions to meet campus security standards and minimize unauthorized system usage</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
+    <!-- contact section — form powered by Formspree + LinkedIn and email cards -->
     <div class="content-wrapper" id="contact">
-      <h3 class="reveal">Contact</h3>
-      <p class="reveal">
-        Feel free to reach out — I'm always open to new opportunities, collaborations, or just a good conversation i need to rewrite this
-      </p>
-      <div class="contact-links reveal">
-        <a href="mailto:your@email.com" class="contact-link">✉ Email</a>
-        <a href="https://github.com/nathanchamorro1" target="_blank" class="contact-link">GitHub</a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">LinkedIn</a>
+      <h3 class="reveal">Let's Connect</h3>
+      <p class="reveal">I'm open to new opportunities in software, IT, and cybersecurity. I'd also love to set up a coffee chat!</p>
+
+      <div class="contact-grid reveal">
+
+        <div class="contact-card contact-card--form">
+          <span class="contact-card-title contact-card-title--form">Send Me a Message</span>
+          <form class="contact-form" action="https://formspree.io/f/xjganyyz" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Message" rows="4" required></textarea>
+            <button type="submit">Send message</button>
+          </form>
+        </div>
+
+        <!-- Social -->
+        <div class="contact-card">
+          <div class="contact-card-icon contact-card-icon--linkedin">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <span class="contact-card-title">LinkedIn</span>
+          <a href="https://linkedin.com/in/nathanchamorro" target="_blank" class="contact-card-link">
+            nathanchamorro
+            <i data-lucide="arrow-up-right" width="13" height="13"></i>
+          </a>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-card">
+          <div class="contact-card-icon contact-card-icon--outline">
+            <i data-lucide="mail" width="20" height="20"></i>
+          </div>
+          <span class="contact-card-title">Email me</span>
+          <a href="mailto:nathanchamorro05@gmail.com" class="contact-card-link">
+            nathanchamorro05@gmail.com
+            <i data-lucide="arrow-up-right" width="13" height="13"></i>
+          </a>
+        </div>
+
+        <!-- Form -->
+
       </div>
     </div>
 
   </main>
-</div>
+
+<!-- big name footer with resume link, LinkedIn, and email -->
+<footer class="site-footer">
+  <div class="footer-name-block">
+    <div class="footer-inner">
+    <p class="footer-byline">Designed and Developed by</p>
+    <h2 class="footer-name">NATHAN<br>CHAMORRO</h2>
+    <div class="footer-bottom">
+      <a href="#" class="footer-resume">RESUME</a>
+      <a href="https://linkedin.com/in/nathanchamorro" target="_blank" class="footer-linkedin-icon" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="mailto:nathanchamorro05@gmail.com" class="footer-email">nathanchamorro05@gmail.com</a>
+    </div>
+    </div>
+  </div>
+</footer>
+
 <script src="js/script.js"></script>
 </body>
 </html>
