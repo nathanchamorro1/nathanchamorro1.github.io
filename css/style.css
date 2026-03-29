@@ -960,7 +960,6 @@ body.light .footer-email {
     background: var(--text);
     display: block;
     opacity: 1;
-    box-shadow: 0 -7px 0 var(--text), 0 7px 0 var(--text);
     transition: opacity 0.15s;
 }
 
@@ -1036,21 +1035,28 @@ body.light .footer-email {
     transform: translateX(-50%);
     white-space: nowrap;
   }
+  .topnav-right {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
   .topnav-links {
     display: none;
   }
   .nav-link--resume {
     display: none;
   }
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    order: -1;
+  }
   .mobile-menu-btn {
     display: flex;
-  }
-  .theme-toggle {
-    width: 26px;
-    height: 26px;
+    margin-right: 1.2rem;
   }
   h2 {
-    font-size: 0.78rem;
+    font-size: 1rem;
     line-height: 1.8;
   }
   .content-wrapper {
