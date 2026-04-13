@@ -427,6 +427,43 @@ h4 {
     gap: 2.5rem 2rem;
 }
 
+.project-coming-soon {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 1.6rem 1.8rem;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+}
+
+.project-coming-soon-category {
+    font-family: museo-sans, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.project-coming-soon-title {
+    font-family: museo-sans, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.project-coming-soon-desc {
+    font-family: museo-sans, sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -472,7 +509,7 @@ h4 {
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 30px
+    margin-bottom: 0.3rem;
     color: var(--accent);
 }
 
@@ -512,6 +549,12 @@ h4 {
     background: transparent;
     color: var(--accent);
     border: 1px solid var(--accent);
+}
+
+.project-tag--solid {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
 }
 
 .project-links {
