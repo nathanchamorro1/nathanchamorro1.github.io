@@ -8,7 +8,7 @@
 <link rel="icon" type="image/x-icon" href = "/assets/snoopy-favicon.ico">
 <link rel="stylesheet" href="https://use.typekit.net/lhh1weh.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=39">
 <script src="https://unpkg.com/lucide@latest"></script>
 <!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXSX1VWMQC"></script>
@@ -21,219 +21,199 @@
 </head>
 <body>
 
-<nav class="topnav">
-  <div class="topnav-inner">
-  <a href="#home" class="topnav-brand">NATHAN CHAMORRO</a>
-  <div class="topnav-right">
-    <ul class="topnav-links">
-      <li><a href="#home" class="nav-link">HOME</a></li>
-      <li><a href="#skills" class="nav-link">SKILLS</a></li>
-      <li><a href="#projects" class="nav-link">PROJECTS</a></li>
-      <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
-      <li><a href="#contact" class="nav-link">CONTACT</a></li>
-    </ul>
-    <a href="resume.pdf" target="_blank" class="nav-link nav-link--resume">RESUME</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <i data-lucide="sun" class="icon-sun" width="16" height="16"></i>
-      <i data-lucide="moon" class="icon-moon" width="16" height="16"></i>
-    </button>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-      <span class="mobile-menu-dot"></span>
-    </button>
-  </div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <ul class="mobile-menu-links">
-      <li><a href="#home" class="mobile-nav-link">HOME</a></li>
-      <li><a href="#skills" class="mobile-nav-link">SKILLS</a></li>
-      <li><a href="#projects" class="mobile-nav-link">PROJECTS</a></li>
-      <li><a href="#experience" class="mobile-nav-link">EXPERIENCE</a></li>
-      <li><a href="#contact" class="mobile-nav-link">CONTACT</a></li>
-      <li><a href="resume.pdf" class="mobile-nav-link">RESUME</a></li>
-    </ul>
-  </div>
+<!-- floating dock at the bottom of the screen; the active link follows the section in view -->
+<nav class="dock" aria-label="Sections">
+  <span class="dock-indicator" aria-hidden="true"></span>
+  <a href="#home" class="dock-link is-active">Home</a>
+  <a href="#projects" class="dock-link">Projects</a>
+  <a href="#experience" class="dock-link">Experience</a>
+  <a href="#contact" class="dock-link">Contact</a>
+  <span class="dock-divider" aria-hidden="true"></span>
+  <button class="dock-theme" id="themeToggle" aria-label="Toggle theme">
+    <i data-lucide="sun" class="icon-sun" width="18" height="18"></i>
+    <i data-lucide="moon" class="icon-moon" width="18" height="18"></i>
+  </button>
 </nav>
 
+<!-- scroll hint: thin chevron above the dock, fades in on load and hides once you scroll -->
+<a href="#skills" class="scroll-hint" aria-label="Scroll to next section">
+  <svg width="48" height="14" viewBox="0 0 48 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M2 2 L24 12 L46 2"/>
+  </svg>
+</a>
+
 <main class="content">
-    <!-- hero: photo on the right, name + links on the left -->
+    <!-- hero: name on one line (two on phones), intro, and links -->
     <div class="content-wrapper" id="home">
-      <div class="hero-split">
-        <div class="hero-left">
-          <section class="hero">
-            <h2 class="reveal terminal-prompt">nathanchamorro@portfolio:~$ whoami <span class="cursor"></span></h2>
-            <h1 class="reveal">Nathan Chamorro</h1>
-            <div class="hero-buttons reveal">
-              <a href="resume.pdf" target="_blank" class="hero-btn">
-                <i data-lucide="file-user" width="16" height="16"></i>
-                Resume
-              </a>
-              <a href="https://github.com/nathanchamorro1" target="_blank" class="hero-btn hero-btn--outline">
-                <img src="assets/github.svg" width="16" height="16" alt="GitHub">
-                GitHub
-              </a>
-              <a href="https://linkedin.com/in/nathanchamorro" target="_blank" class="hero-btn hero-btn--outline">
-                <img src="assets/linkedin.svg" width="16" height="16" alt="LinkedIn">
-                LinkedIn
-              </a>
-              <a href="mailto:nathanchamorro05@gmail.com?subject=Hey,%20Nathan!"" class="hero-btn hero-btn--outline">
-                <i data-lucide="mail" width="16" height="16"></i>
-                Email
-              </a>
-            </div>
-          </section>
-          <br>
-          <p class="reveal">I recently graduated from Cal State Fullerton in May 2026 with a BS in Computer Science, focused on building software that's as thoughtful in design as it is in function.<br><br>I am open to new opportunities in software, IT, cybersecurity, or anywhere in technology. I'm also happy to setup a coffee chat.
-            <p class="credit-hero">
-              <i data-lucide="lightbulb" class="credit-hero-icon" width="17" height="17"></i>
-              <span>Designed the interface in Figma and built the site from scratch using HTML, CSS, and JavaScript. Deployed through GitHub Pages with <a href="https://lucide.dev/icons/" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">Lucide<i data-lucide="arrow-up-right" width="12" height="12"></i></a> icons. Uses Instrument Sans for headings, Museo Sans for body text, and RL Limo for my name.</span>
-            </p>
-        </div>
-        <div class="hero-right reveal">
-          <img src="assets/me.jpeg" alt="Nathan Chamorro" class="hero-photo">
-        </div>
-      </div>
+        <section class="hero hero-left">
+          <h1 class="reveal">Nathan<br class="name-break"> Chamorro</h1>
+          <p class="hero-intro reveal">I’m the Housing Technology Coordinator at Cal&nbsp;State&nbsp;Fullerton, where I administer the StarRez housing database. I write SQL to build scalable reporting for university leadership that helps optimize occupancy and operations, and I develop integrations using the StarRez REST API, Power Automate, and Power BI.</p>
+          <p class="hero-intro reveal">I graduated from CSUF in 2026 with a B.S. in Computer Science. Before my current role, I worked on the CalREN backbone network at CENIC and contributed to penetration testing and CTFs with CSUF’s red team.</p>
+          <p class="hero-intro hero-intro--strong reveal">I’m interested in building software, working with data, and designing reliable systems and infrastructure, and I’m open to opportunities in DevOps, data engineering, cloud, and&nbsp;security.</p>
+          <div class="hero-buttons reveal">
+            <a href="resume.pdf" target="_blank" class="hero-btn">Resume</a>
+            <a href="https://github.com/nathanchamorro1" target="_blank" class="hero-btn hero-btn--outline">GitHub</a>
+            <a href="https://linkedin.com/in/nathanchamorro" target="_blank" class="hero-btn hero-btn--outline">LinkedIn</a>
+            <a href="mailto:nathanchamorro05@gmail.com?subject=Hey,%20Nathan!" class="hero-btn hero-btn--outline">Email</a>
+          </div>
+        </section>
     </div>
 
     <!-- skills section: split into tech stack and relevant coursework -->
-    <div class="content-wrapper" id="skills">
-      <h3 class="reveal">Skills</h3>
+    <!-- full-width line marking where the full-screen hero ends -->
+    <div class="section-divider">
+      <div class="content-wrapper" id="skills">
+        <h3 class="reveal">Skills</h3>
 
-      <div class="skills-subsection reveal">
-        <span class="skills-subsection-label">Technologies</span>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/python/1a1a2e" alt="Python" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/python/e8e8f0" alt="Python" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Python</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/cplusplus/1a1a2e" alt="C++" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/cplusplus/e8e8f0" alt="C++" class="skill-icon logo-dark"></div>
-            <span class="skill-label">C++</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/flutter/1a1a2e" alt="Flutter" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/flutter/e8e8f0" alt="Flutter" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Flutter</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/html5/1a1a2e" alt="HTML5" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/html5/e8e8f0" alt="HTML5" class="skill-icon logo-dark"></div>
-            <span class="skill-label">HTML5</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/mysql/1a1a2e" alt="SQL" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/mysql/e8e8f0" alt="SQL" class="skill-icon logo-dark"></div>
-            <span class="skill-label">SQL</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/git/1a1a2e" alt="Git" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/git/e8e8f0" alt="Git" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Git</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/docker/1a1a2e" alt="Docker" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/docker/e8e8f0" alt="Docker" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Docker</span>
-          </div>
-          <div class="skill-item">
-          <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cloud" width="22" height="22"></i></div>
-            <span class="skill-label">AWS</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/firebase/1a1a2e" alt="Firebase" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/firebase/e8e8f0" alt="Firebase" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Firebase</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/javascript/1a1a2e" alt="JavaScript" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/javascript/e8e8f0" alt="JavaScript" class="skill-icon logo-dark"></div>
-            <span class="skill-label">JavaScript</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/css/1a1a2e" alt="CSS" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/css/e8e8f0" alt="CSS" class="skill-icon logo-dark"></div>
-            <span class="skill-label">CSS</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/wireshark/1a1a2e" alt="Wireshark" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/wireshark/e8e8f0" alt="Wireshark" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Wireshark</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="network" width="22" height="22"></i></div>
-            <span class="skill-label">TCP/IP</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/react/1a1a2e" alt="React" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/react/e8e8f0" alt="React" class="skill-icon logo-dark"></div>
-            <span class="skill-label">React</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/fastapi/1a1a2e" alt="FastAPI" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/fastapi/e8e8f0" alt="FastAPI" class="skill-icon logo-dark"></div>
-            <span class="skill-label">FastAPI</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/postgresql/1a1a2e" alt="PostgreSQL" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/postgresql/e8e8f0" alt="PostgreSQL" class="skill-icon logo-dark"></div>
-            <span class="skill-label">PostgreSQL</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/terraform/1a1a2e" alt="Terraform" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/terraform/e8e8f0" alt="Terraform" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Terraform</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/githubactions/1a1a2e" alt="GitHub Actions" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/githubactions/e8e8f0" alt="GitHub Actions" class="skill-icon logo-dark"></div>
-            <span class="skill-label">GitHub Actions</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/linux/1a1a2e" alt="Linux" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/linux/e8e8f0" alt="Linux" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Linux</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="plug" width="22" height="22"></i></div>
-            <span class="skill-label">StarRez API</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/dart/1a1a2e" alt="Dart" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/dart/e8e8f0" alt="Dart" class="skill-icon logo-dark"></div>
-            <span class="skill-label">Dart</span>
+        <div class="skills-subsection reveal">
+          <span class="skills-subsection-label">Technologies</span>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/python/1a1a2e" alt="Python" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/python/e8e8f0" alt="Python" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Python</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/cplusplus/1a1a2e" alt="C++" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/cplusplus/e8e8f0" alt="C++" class="skill-icon logo-dark"></div>
+              <span class="skill-label">C++</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/flutter/1a1a2e" alt="Flutter" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/flutter/e8e8f0" alt="Flutter" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Flutter</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/html5/1a1a2e" alt="HTML5" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/html5/e8e8f0" alt="HTML5" class="skill-icon logo-dark"></div>
+              <span class="skill-label">HTML5</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="database" width="22" height="22"></i></div>
+              <span class="skill-label">SQL</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/git/1a1a2e" alt="Git" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/git/e8e8f0" alt="Git" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Git</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/docker/1a1a2e" alt="Docker" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/docker/e8e8f0" alt="Docker" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Docker</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cloud" width="22" height="22"></i></div>
+              <span class="skill-label">AWS</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/firebase/1a1a2e" alt="Firebase" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/firebase/e8e8f0" alt="Firebase" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Firebase</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/javascript/1a1a2e" alt="JavaScript" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/javascript/e8e8f0" alt="JavaScript" class="skill-icon logo-dark"></div>
+              <span class="skill-label">JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/css/1a1a2e" alt="CSS" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/css/e8e8f0" alt="CSS" class="skill-icon logo-dark"></div>
+              <span class="skill-label">CSS</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/wireshark/1a1a2e" alt="Wireshark" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/wireshark/e8e8f0" alt="Wireshark" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Wireshark</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="network" width="22" height="22"></i></div>
+              <span class="skill-label">TCP/IP</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/react/1a1a2e" alt="React" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/react/e8e8f0" alt="React" class="skill-icon logo-dark"></div>
+              <span class="skill-label">React</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/fastapi/1a1a2e" alt="FastAPI" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/fastapi/e8e8f0" alt="FastAPI" class="skill-icon logo-dark"></div>
+              <span class="skill-label">FastAPI</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/postgresql/1a1a2e" alt="PostgreSQL" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/postgresql/e8e8f0" alt="PostgreSQL" class="skill-icon logo-dark"></div>
+              <span class="skill-label">PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/terraform/1a1a2e" alt="Terraform" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/terraform/e8e8f0" alt="Terraform" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Terraform</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/githubactions/1a1a2e" alt="GitHub Actions" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/githubactions/e8e8f0" alt="GitHub Actions" class="skill-icon logo-dark"></div>
+              <span class="skill-label">GitHub Actions</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/linux/1a1a2e" alt="Linux" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/linux/e8e8f0" alt="Linux" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Linux</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="plug" width="22" height="22"></i></div>
+              <span class="skill-label">StarRez API</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="workflow" width="22" height="22"></i></div>
+              <span class="skill-label">Power Automate</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="chart-column" width="22" height="22"></i></div>
+              <span class="skill-label">Power BI</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="folders" width="22" height="22"></i></div>
+              <span class="skill-label">SharePoint</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/dart/1a1a2e" alt="Dart" class="skill-icon logo-light"><img src="https://cdn.simpleicons.org/dart/e8e8f0" alt="Dart" class="skill-icon logo-dark"></div>
+              <span class="skill-label">Dart</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="skills-subsection reveal">
-        <span class="skills-subsection-label">Relevant Coursework at CSUF</span>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="wifi" width="28" height="28"></i></div>
-            <span class="skill-label">Computer Communications</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="layers" width="28" height="28"></i></div>
-            <span class="skill-label">Data Structures</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cpu" width="28" height="28"></i></div>
-            <span class="skill-label">Algorithm Engineering</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cloud" width="28" height="28"></i></div>
-            <span class="skill-label">Cloud Computing & Security</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="sparkles" width="28" height="28"></i></div>
-            <span class="skill-label">Artificial Intelligence</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="database" width="28" height="28"></i></div>
-            <span class="skill-label">Database Systems</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="award" width="28" height="28"></i></div>
-            <span class="skill-label">Capstone</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="monitor" width="28" height="28"></i></div>
-            <span class="skill-label">Web Front-End Development</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="server" width="28" height="28"></i></div>
-            <span class="skill-label">Web Back-End Development</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="link" width="28" height="28"></i></div>
-            <span class="skill-label">Blockchain Technologies</span>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="infinity" width="28" height="28"></i></div>
-            <span class="skill-label">DevOps</span>
+        <div class="skills-subsection reveal">
+          <span class="skills-subsection-label">Relevant Coursework at CSUF</span>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="wifi" width="28" height="28"></i></div>
+              <span class="skill-label">Computer Communications</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="layers" width="28" height="28"></i></div>
+              <span class="skill-label">Data Structures</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cpu" width="28" height="28"></i></div>
+              <span class="skill-label">Algorithm Engineering</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cloud" width="28" height="28"></i></div>
+              <span class="skill-label">Cloud Computing & Security</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="sparkles" width="28" height="28"></i></div>
+              <span class="skill-label">Artificial Intelligence</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="database" width="28" height="28"></i></div>
+              <span class="skill-label">Database Systems</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="award" width="28" height="28"></i></div>
+              <span class="skill-label">Capstone</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="monitor" width="28" height="28"></i></div>
+              <span class="skill-label">Web Front-End Development</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="server" width="28" height="28"></i></div>
+              <span class="skill-label">Web Back-End Development</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="link" width="28" height="28"></i></div>
+              <span class="skill-label">Blockchain Technologies</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="infinity" width="28" height="28"></i></div>
+              <span class="skill-label">DevOps</span>
+            </div>
           </div>
         </div>
       </div>
@@ -243,12 +223,6 @@
     <div class="content-wrapper" id="projects">
       <h3 class="reveal">My Projects</h3>
       <div class="projects-grid reveal">
-
-        <div class="project-coming-soon">
-          <span class="project-coming-soon-category">In Progress</span>
-          <span class="project-coming-soon-title"><i data-lucide="coffee" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:0.35rem;margin-bottom:0.1rem;"></i> Groundwork</span>
-          <p class="project-coming-soon-desc">An OC coffee shop discovery app that uses AI-powered suggestions to surface local spots based on your vibe. Built with React, FastAPI, and PostgreSQL. Coming soon.</p>
-        </div>
 
         <div class="project-card">
           <div class="project-img-wrap" style="background: #0f2a4a;"><img src="assets/titanpark_card.png" alt="TitanPark"></div>
@@ -285,9 +259,6 @@
               <span class="project-tag">StarRez API</span>
             </div>
             <div class="project-links">
-              <a href="#" target="_blank" class="project-link">
-                GitHub <i data-lucide="arrow-up-right" width="13" height="13"></i>
-              </a>
               <a href="https://drive.google.com/file/d/1WpiVGs7HrFMfDocmjuY2gUrkn6I_YrWz/view?usp=sharing" target="_blank" class="project-link">
                 Documentation <i data-lucide="arrow-up-right" width="13" height="13"></i>
               </a>
@@ -313,9 +284,25 @@
               <a href="https://youtu.be/CfpUIvzETOM" target="_blank" class="project-link">
                 Live Demo <i data-lucide="arrow-up-right" width="13" height="13"></i>
               </a>
-              <a href="https://devpost.com/software/slayce-posture-corrector?_gl=1*5osqy8*_gcl_au*MTI4MzM5NjM5NS4xNzYzNDk1NTI2*_ga*MTk0NzczNzQyNC4xNzYzNDk1NTI2*_ga_0YHJK3Y10M*czE3NjM0OTU1MjYkbzEkZzEkdDE3NjM0OTU1MzYkajUwJGwwJGgw" target="_blank" class="project-link">
+              <a href="https://devpost.com/software/slayce-posture-corrector" target="_blank" class="project-link">
                 DevPost <i data-lucide="arrow-up-right" width="13" height="13"></i>
               </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrap project-img-wrap--icon" style="background: #1f2f5c;"><i data-lucide="chart-column" width="56" height="56" aria-hidden="true"></i></div>
+          <div class="project-info">
+            <span class="project-category">DATA AND ANALYTICS</span>
+            <h4 class="project-title">Lockout Dashboard</h4>
+            <p class="project-desc">A Power BI dashboard that tracks resident lockouts for Housing Operations. Lockout records are pulled from the StarRez API by Power Automate, written to a SharePoint list, and reported on in Power BI.</p>
+            <div class="project-tags">
+              <span class="project-tag project-tag--solid">In Production</span>
+              <span class="project-tag">Power BI</span>
+              <span class="project-tag">Power Automate</span>
+              <span class="project-tag">SharePoint</span>
+              <span class="project-tag">StarRez API</span>
             </div>
           </div>
         </div>
@@ -341,32 +328,28 @@
 
         <div class="timeline-item">
           <div class="timeline-logo-wrap">
-            <img src="assets/cenic-regular.png" alt="CENIC logo" class="timeline-logo logo-light">
-            <img src="assets/cenic-white.png" alt="CENIC logo" class="timeline-logo logo-dark">
-          </div>
-          <div class="timeline-body">
-            <span class="timeline-role">NOC Intern</span>
-            <span class="timeline-company"><a href="https://cenic.org" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">CENIC<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
-            <div class="timeline-meta">May 2025 – Present · La Mirada, CA · Hybrid</div>
-            <div class="timeline-desc">
-              <ul>
-                <li>Monitored network infrastructure supporting California's research and education community, tracking circuit health and responding to alerts across a statewide backbone serving universities, K-12 schools, and research institutions</li>
-                <li>Documented and escalated network incidents by coordinating with carriers and internal engineers to restore service and maintain uptime across critical research and education circuits</li>
-                <li>Assisted with NOC operations including ticket management, performance data review, and maintaining accurate records of network events and resolutions</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-logo-wrap">
             <img src="assets/csuf-monogram-blue.png" alt="Cal State Fullerton (CSUF) logo" class="timeline-logo logo-light">
             <img src="assets/csuf-monogram-white.png" alt="Cal State Fullerton (CSUF) logo" class="timeline-logo logo-dark">
           </div>
           <div class="timeline-body">
-            <span class="timeline-role">Residential Technology Assistant</span>
+            <span class="timeline-role">Housing Technology Coordinator</span>
             <span class="timeline-company"><a href="https://www.fullerton.edu/housing" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">CSUF Housing and Residential Engagement<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
-            <div class="timeline-meta">October 2024 – Present · Fullerton, CA · Part-time</div>
+            <div class="timeline-meta">August 2026 – Present · Fullerton, CA · Full-time</div>
+            <div class="timeline-desc">
+              <ul>
+                <li>Administer the StarRez housing management database alongside Persona (access control) and Atrium (meal plans), managing role-based access control, permissions, and data integrity across thousands of resident records</li>
+                <li>Engineered an automated lockout workflow using Power Automate and the StarRez REST API, validating resident room assignments in real time before writing lockout records to the database</li>
+                <li>Built an end-to-end lockout reporting pipeline extracting StarRez data through Power Automate into SharePoint, visualized in a Power BI dashboard used by Housing Operations and leadership</li>
+                <li>Developed event-driven Power Automate flows that parse StarRez data subscriptions and publish resource checkout records to Microsoft Teams, and a Power Apps canvas application for equipment checkout tracking</li>
+                <li>Write and maintain database queries and reports on occupancy, assignments, access, and meal plans to support housing selection and maintain occupancy at or near 100%</li>
+                <li>Coordinate with campus IT and the StarRez vendor to develop test plans, build test scenarios, and validate system updates and implementations in production</li>
+                <li>Provide departmental IT support, including hardware and software troubleshooting, OS imaging and deployment, meeting room AV systems, and user provisioning and deprovisioning</li>
+              </ul>
+            </div>
+
+            <div class="timeline-subrole">
+            <span class="timeline-role">Residential Technology Assistant</span>
+            <div class="timeline-meta">October 2024 – August 2026 · Fullerton, CA · Part-time · Promoted to Coordinator</div>
             <div class="timeline-desc">
               <ul>
                 <li>Built SQL queries to power application workflows including email triggers, page logic, report generation, and room
@@ -377,10 +360,31 @@ implementing round-based timeslot scheduling to distribute load across 3,000+ st
 Housing executive leadership and the CSUF Vice President's office</li>
                 <li>Managed roommate messaging system, gender/room profile assignments, and booking validation to ensure data integrity
 across the full applicant lifecycle</li>
-<li>Maintains and updates the department website, implementing content changes and design updates in coordination with Housing leadership.</li>
+                <li>Maintained and updated the department website, implementing content changes and design updates in coordination with Housing leadership</li>
                 <li>Provided technical support for network and device issues across a 2,000+ resident housing community</li>
                 <li>Received departmental award from the Executive and Associate Director for exemplary contributions to housing
 technology initiatives</li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-logo-wrap">
+            <img src="assets/cenic-regular.png" alt="CENIC logo" class="timeline-logo logo-light">
+            <img src="assets/cenic-white.png" alt="CENIC logo" class="timeline-logo logo-dark">
+          </div>
+          <div class="timeline-body">
+            <span class="timeline-role">NOC Intern</span>
+            <span class="timeline-company"><a href="https://cenic.org" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">CENIC<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
+            <div class="timeline-meta">May 2025 – August 2026 · La Mirada, CA · Hybrid</div>
+            <div class="timeline-desc">
+              <ul>
+                <li>Redesigned WORA, CENIC’s outage ticket auditing pipeline, from a terminal script into a Python web application processing outage data from Jira, Gmail, and CSV exports, cutting report completion time from 2-3 days to 1 day</li>
+                <li>Aggregated 50+ outage announcements into weekly operations metrics reports, cross-referencing ops data to give leadership visibility into network incidents</li>
+                <li>Remediated 10+ vulnerability tickets weekly in Jira, tracking patch compliance across security-managed systems against REN-ISAC threat advisories</li>
+                <li>Performed optics diagnostics and troubleshooting on the CalREN backbone, the research and education network serving 20M+ Californians and 12,000+ member sites</li>
               </ul>
             </div>
           </div>
@@ -407,71 +411,53 @@ technology initiatives</li>
       </div>
     </div>
 
-    <!-- contact section — form powered by Formspree + LinkedIn and email cards -->
+    <!-- contact section: heading on the left, link list on the right -->
     <div class="content-wrapper" id="contact">
-      <h3 class="reveal">Let's Connect</h3>
-      <p class="reveal">I'm open to new opportunities in software, IT, networking, and cybersecurity. I'd also love to set up a coffee chat!</p>
-
-      <div class="contact-grid reveal">
-
-        <div class="contact-card contact-card--form">
-          <span class="contact-card-title contact-card-title--form">Send Me a Message</span>
-          <form class="contact-form" action="https://formspree.io/f/xjganyyz" method="POST">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" placeholder="Message" rows="4" required></textarea>
-            <button type="submit">Send message</button>
-          </form>
+      <div class="contact-split reveal">
+        <div>
+          <h3>Let's connect</h3>
+          <p class="contact-intro">I am open to DevOps, data engineering, cloud, and security roles. I am also always up for a coffee chat!</p>
         </div>
-
-        <!-- Social -->
-        <div class="contact-card">
-          <div class="contact-card-icon contact-card-icon--linkedin">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </div>
-          <span class="contact-card-title">LinkedIn</span>
-          <a href="https://linkedin.com/in/nathanchamorro" target="_blank" class="contact-card-link">
-            nathanchamorro
-            <i data-lucide="arrow-up-right" width="13" height="13"></i>
-          </a>
-        </div>
-
-        <!-- Email -->
-        <div class="contact-card">
-          <div class="contact-card-icon contact-card-icon--outline">
-            <i data-lucide="mail" width="20" height="20"></i>
-          </div>
-          <span class="contact-card-title">Email me</span>
-          <a href="mailto:nathanchamorro05@gmail.com" class="contact-card-link">
-            nathanchamorro05@gmail.com
-            <i data-lucide="arrow-up-right" width="13" height="13"></i>
-          </a>
-        </div>
-
-        <!-- Form -->
-
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:nathanchamorro05@gmail.com" class="contact-row">
+              <span class="contact-row-label">Email</span>
+              <span class="contact-row-value">nathanchamorro05@gmail.com <i data-lucide="arrow-up-right" width="14" height="14"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/nathanchamorro" target="_blank" class="contact-row">
+              <span class="contact-row-label">LinkedIn</span>
+              <span class="contact-row-value">nathanchamorro <i data-lucide="arrow-up-right" width="14" height="14"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/nathanchamorro1" target="_blank" class="contact-row">
+              <span class="contact-row-label">GitHub</span>
+              <span class="contact-row-value">nathanchamorro1 <i data-lucide="arrow-up-right" width="14" height="14"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="resume.pdf" target="_blank" class="contact-row">
+              <span class="contact-row-label">Resume</span>
+              <span class="contact-row-value">PDF <i data-lucide="arrow-up-right" width="14" height="14"></i></span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
   </main>
 
-<!-- big name footer with resume link, LinkedIn, and email -->
 <footer class="site-footer">
-  <div class="footer-name-block">
-    <div class="footer-inner">
-    <p class="footer-byline">Designed and Developed by</p>
-    <h2 class="footer-name">NATHAN<br>CHAMORRO</h2>
-    <div class="footer-bottom">
-      <a href="resume.pdf" class="footer-resume">RESUME</a>
-      <a href="https://linkedin.com/in/nathanchamorro" target="_blank" class="footer-linkedin-icon" aria-label="LinkedIn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="mailto:nathanchamorro05@gmail.com" class="footer-email">nathanchamorro05@gmail.com</a>
-    </div>
+  <div class="footer-inner">
+    <div class="footer-row">
+      <p>&copy; 2026 Nathan Chamorro</p>
+      <p>Designed in Figma, built with HTML, CSS &amp; JS. <a href="https://github.com/nathanchamorro1/nathanchamorro1.github.io" target="_blank" class="footer-source">Source<i data-lucide="arrow-up-right" width="13" height="13"></i></a></p>
     </div>
   </div>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="js/script.js?v=14"></script>
 </body>
 </html>
