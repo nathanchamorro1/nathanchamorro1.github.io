@@ -1311,6 +1311,15 @@ body:not(.light) .logo-light { display: none; }
     position: sticky;
     top: 0;
     justify-content: flex-start;
+    gap: 4px;
+    padding: 10px 12px;
+  }
+  /* links share the row evenly (instead of bunching on the left) with slightly larger text */
+  .dock-link {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.65rem 0.25rem;
   }
   .dock-divider {
     display: none;
@@ -1388,7 +1397,6 @@ body:not(.light) .logo-light { display: none; }
     padding-right: 8px;
   }
   .dock-link {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    font-size: 0.85rem;
   }
 }
