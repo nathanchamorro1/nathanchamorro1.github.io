@@ -8,7 +8,7 @@
 <link rel="icon" type="image/x-icon" href = "/assets/snoopy-favicon.ico">
 <link rel="stylesheet" href="https://use.typekit.net/lhh1weh.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/style.css?v=42">
+<link rel="stylesheet" href="css/style.css?v=55">
 <script src="https://unpkg.com/lucide@latest"></script>
 <!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXSX1VWMQC"></script>
@@ -28,6 +28,8 @@
   <a href="#projects" class="dock-link">Projects</a>
   <a href="#experience" class="dock-link">Experience</a>
   <a href="#contact" class="dock-link">Contact</a>
+  <!-- opens the PDF in a new tab (not a section, so script.js leaves it alone) -->
+  <a href="resume.pdf" target="_blank" class="dock-link dock-link--external">Resume<i data-lucide="arrow-up-right" width="12" height="12"></i></a>
   <span class="dock-divider" aria-hidden="true"></span>
   <button class="dock-theme" id="themeToggle" aria-label="Toggle theme">
     <i data-lucide="sun" class="icon-sun" width="18" height="18"></i>
@@ -167,7 +169,7 @@
           </div>
         </div>
 
-        <div class="skills-subsection reveal">
+        <div class="skills-subsection reveal" id="coursework">
           <span class="skills-subsection-label">Relevant Coursework at CSUF</span>
           <div class="skills-grid">
             <div class="skill-item">
@@ -184,7 +186,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="cloud" width="28" height="28"></i></div>
-              <span class="skill-label">Cloud Computing & Security</span>
+              <span class="skill-label">Cloud Computing and Security</span>
             </div>
             <div class="skill-item">
               <div class="skill-icon-wrap skill-icon-wrap--lucide"><i data-lucide="sparkles" width="28" height="28"></i></div>
@@ -333,7 +335,7 @@
           </div>
           <div class="timeline-body">
             <span class="timeline-role">Housing Technology Coordinator</span>
-            <span class="timeline-company"><a href="https://www.fullerton.edu/housing" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">CSUF Housing and Residential Engagement<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
+            <span class="timeline-company"><a href="https://www.fullerton.edu/housing" target="_blank" class="timeline-company-link">CSUF Housing and Residential Engagement<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
             <div class="timeline-meta">August 2026 – Present · Fullerton, CA · Full-time</div>
             <div class="timeline-desc">
               <ul>
@@ -377,7 +379,7 @@ technology initiatives</li>
           </div>
           <div class="timeline-body">
             <span class="timeline-role">NOC Intern</span>
-            <span class="timeline-company"><a href="https://cenic.org" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">CENIC<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
+            <span class="timeline-company"><a href="https://cenic.org" target="_blank" class="timeline-company-link">CENIC<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
             <div class="timeline-meta">May 2025 – August 2026 · La Mirada, CA · Hybrid</div>
             <div class="timeline-desc">
               <ul>
@@ -397,7 +399,7 @@ technology initiatives</li>
           </div>
           <div class="timeline-body">
             <span class="timeline-role">Offensive Security Analyst, Red Team (Academic Program)</span>
-            <span class="timeline-company"><a href="https://www.fullerton.edu/cybersecurity/" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.2rem;font-weight:600;">CSUF Center for Cybersecurity<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
+            <span class="timeline-company"><a href="https://www.fullerton.edu/cybersecurity/" target="_blank" class="timeline-company-link">CSUF Center for Cybersecurity<i data-lucide="arrow-up-right" width="12" height="12"></i></a></span>
             <div class="timeline-meta">November 2025 – May 2026 · Fullerton, CA</div>
             <div class="timeline-desc">
               <ul>
@@ -409,6 +411,38 @@ technology initiatives</li>
         </div>
 
       </div>
+    </div>
+
+    <!-- education section: compact list, degree and school on the left, date on the right -->
+    <div class="content-wrapper" id="education">
+      <h3 class="reveal">Education</h3>
+      <ul class="edu-list reveal">
+        <li class="edu-item">
+          <div class="edu-main">
+            <h4 class="edu-degree">B.S. Computer Science</h4>
+            <p class="edu-school"><a href="https://www.fullerton.edu" target="_blank">California State University, Fullerton</a></p>
+            <p class="edu-coursework">Computer Communications, Cloud Computing and Security, DevOps, Database Systems, Algorithm Engineering</p>
+            <a href="#coursework" class="edu-btn scroll-link">
+              Relevant coursework
+              <i data-lucide="arrow-up" width="14" height="14"></i>
+            </a>
+          </div>
+          <time class="timeline-meta edu-date" datetime="2026-05">May 2026</time>
+        </li>
+        <li class="edu-item">
+          <div class="edu-main">
+            <h4 class="edu-degree">4 Associate’s Degrees, with Distinction</h4>
+            <p class="edu-school"><a href="https://www.norcocollege.edu" target="_blank">Norco College</a></p>
+            <ul class="edu-pills" aria-label="Degrees">
+              <li>AS-T in Computer Science (Associate in Science for Transfer)</li>
+              <li>AS in Math and Science</li>
+              <li>AA in Humanities, Philosophy, and Arts</li>
+              <li>AA in Social and Behavioral Studies</li>
+            </ul>
+          </div>
+          <span class="timeline-meta edu-date"><time datetime="2020">2020</time> - <time datetime="2023">2023</time></span>
+        </li>
+      </ul>
     </div>
 
     <!-- contact section: heading on the left, link list on the right -->
@@ -458,6 +492,6 @@ technology initiatives</li>
   </div>
 </footer>
 
-<script src="js/script.js?v=14"></script>
+<script src="js/script.js?v=16"></script>
 </body>
 </html>

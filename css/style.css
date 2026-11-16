@@ -129,7 +129,8 @@ body::before {
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 0% var(--underline-thickness);
-    transition: background-size var(--underline-duration) cubic-bezier(0.22, 1, 0.36, 1); /* ease-out */
+    transition: background-size var(--underline-duration) cubic-bezier(0.22, 1, 0.36, 1), /* ease-out */
+                color 0.15s;
 }
 
 .hero-intro a:hover,
@@ -143,6 +144,7 @@ body::before {
 .text-link:hover,
 .text-link:focus-visible {
     background-size: 100% var(--underline-thickness);
+    color: var(--accent); /* fades blue like the other links; the underline follows (currentColor) */
 }
 
 /* reduced motion: underline appears instantly */
@@ -503,6 +505,14 @@ body.light {
 
 .dock-link.is-active {
     opacity: 1;
+}
+
+/* Resume: opens the PDF, so it gets a small arrow like the other outside links */
+.dock-link--external {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
 }
 
 .dock-divider {
@@ -890,7 +900,7 @@ h4 {
     justify-content: center;
     overflow: hidden;
     flex-shrink: 0;
-    padding: 8px;
+    padding: 10px; /* the only inset; the logo fills the rest of the box */
     box-sizing: border-box;
 }
 
@@ -910,7 +920,6 @@ body:not(.light) .logo-light { display: none; }
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 20px;
     opacity: 0.9;
 }
 
@@ -937,6 +946,22 @@ body:not(.light) .logo-light { display: none; }
     color: var(--text-muted);
     line-height: 1.3;
     margin-top: 0.15rem;
+}
+
+/* company name link (was inline styles); fades to the accent blue on hover like the other links */
+.timeline-company-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.timeline-company-link:hover,
+.timeline-company-link:focus-visible {
+    color: var(--accent);
 }
 
 .timeline-meta {
@@ -967,6 +992,131 @@ body:not(.light) .logo-light { display: none; }
 /* earlier role at the same employer, listed under the current one */
 .timeline-subrole {
     margin-top: 1.75rem;
+}
+
+/* education: compact list (no logos or timeline line). Degree and school on the left,
+   date on the right in the same small caps style as the Experience dates (.timeline-meta).
+   Thin divider between rows. */
+.edu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* line only between rows; the 24px padding stays on every row, including the first and last */
+.edu-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+    padding: 24px 0;
+}
+
+.edu-item + .edu-item {
+    border-top: 1px solid var(--divider);
+}
+
+.edu-main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.edu-degree {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.3;
+}
+
+.edu-school {
+    font-family: museo-sans, sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--text-muted); /* same gray as the company names in Experience */
+    margin: 0;
+}
+
+/* school link: no underline, just fades to the accent blue on hover */
+.edu-school a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.edu-school a:hover,
+.edu-school a:focus-visible {
+    color: var(--accent);
+}
+
+.edu-coursework {
+    font-family: museo-sans, sans-serif;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5;
+    color: var(--text-faint);
+    margin: 4px 0 0;
+}
+
+/* small outlined button (jumps to the coursework list in Skills); same border and hover
+   as the outlined hero buttons, just smaller */
+.edu-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 10px;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    font-family: museo-sans, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.edu-btn:hover,
+.edu-btn:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Norco degrees as pills, same outline style as the skill pills */
+.edu-pills {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.edu-pills li {
+    font-family: museo-sans, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--text);
+    padding: 0.4rem 0.85rem;
+    border: 0.5px solid var(--text-faint);
+    border-radius: 999px;
+}
+
+/* sits level with the degree name */
+.edu-date {
+    margin-top: 0;
+    padding-top: 6px;
+    white-space: nowrap;
+}
+
+/* phones: date stacks under the content */
+@media (max-width: 640px) {
+    .edu-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .edu-date {
+        padding-top: 0;
+    }
 }
 
 /* contact: heading + blurb on the left, list of links on the right */
@@ -1313,13 +1463,22 @@ body:not(.light) .logo-light { display: none; }
     justify-content: flex-start;
     gap: 4px;
     padding: 10px 12px;
+    /* start below the top strip instead of under it; once the strip scrolls away the
+       bar sticks flush to the top */
+    margin-top: var(--top-strip-height);
   }
-  /* links share the row evenly (instead of bunching on the left) with slightly larger text */
+  /* links share the row evenly (instead of bunching on the left) with slightly larger text.
+     Shorter than the 44px theme button so the active highlight has room above and below. */
   .dock-link {
     flex: 1 1 auto;
     text-align: center;
     font-size: 0.9rem;
-    padding: 0.65rem 0.25rem;
+    padding: 0.4rem 0.25rem;
+  }
+  /* Resume is left out of the nav on phones (no room for five links); the hero's
+     Resume button covers it */
+  .dock-link--external {
+    display: none;
   }
   .dock-divider {
     display: none;

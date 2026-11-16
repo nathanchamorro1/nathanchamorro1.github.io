@@ -72,8 +72,17 @@ function scrollToSection(id) {
   window.scrollTo({ top: Math.max(0, Math.min(y, maxY)), behavior });
 }
 
+// in-page links (e.g. Education's "Relevant coursework" button) use the same framed scroll
+document.querySelectorAll(".scroll-link").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    scrollToSection(link.getAttribute("href").slice(1));
+  });
+});
+
 // bottom dock: highlight the link for the section currently in view
-const dockLinks = document.querySelectorAll(".dock-link");
+// only the section links (href="#..."); the Resume link opens a PDF instead
+const dockLinks = document.querySelectorAll('.dock-link[href^="#"]');
 const dockIndicator = document.querySelector(".dock-indicator");
 
 // move the highlight box to sit behind the given link (CSS transition does the slide)
