@@ -1295,3 +1295,100 @@ body:not(.light) .logo-light { display: none; }
     flex-wrap: wrap;
   }
 }
+
+/* "Cal State Fullerton" stays on one line on desktop; on phones it wraps normally
+   (see the max-width: 640px block) so the line before it isn't cut short */
+.keep-together {
+  white-space: nowrap;
+}
+
+/* ---------- phones (max-width: 640px): hero layout ----------
+   Desktop and tablet are untouched; everything here only applies on narrow screens. */
+@media (max-width: 640px) {
+  /* nav: sticky bar at the top in the page's own (opaque) background, links on the left,
+     theme button at the right end with a 44x44 tap target */
+  .dock {
+    position: sticky;
+    top: 0;
+    justify-content: flex-start;
+  }
+  .dock-divider {
+    display: none;
+  }
+  .dock-theme {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  /* hero: only as tall as its content (no full-screen height), and no scroll arrow.
+     The sticky nav takes up its own space, so no top padding is needed to clear it. */
+  #home {
+    padding-top: 0;
+    min-height: 0;
+  }
+  .scroll-hint {
+    display: none !important;
+  }
+
+  /* 56px from the bottom of the buttons to the Skills border, then 36px above "Skills" */
+  .section-divider {
+    margin-top: 56px;
+    padding-top: 36px;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 15vw, 64px);
+    line-height: 0.95;
+  }
+
+  /* text: 16px / 1.6; 16px between the hero blocks (name, paragraphs, callout, buttons).
+     The callout is border-box, so its edges line up with the paragraphs and buttons. */
+  .hero-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+  .hero-intro + .hero-intro,
+  .hero-intro + .hero-intro--strong {
+    margin-top: 16px;
+  }
+  .keep-together {
+    white-space: normal;
+  }
+
+  /* buttons: Resume full width on its own row, then GitHub / LinkedIn / Email in three
+     equal columns */
+  .hero-buttons,
+  .hero-intro--strong + .hero-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 16px;
+  }
+  .hero-btn {
+    justify-content: center;
+    height: 46px;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .hero-btn:first-child {
+    grid-column: 1 / -1;
+    height: 48px;
+  }
+}
+
+/* very narrow phones (e.g. 360px Android): tighten the nav so the four links and the
+   44px theme button still fit on one row */
+@media (max-width: 380px) {
+  .dock {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .dock-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
